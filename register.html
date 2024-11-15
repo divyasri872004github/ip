@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <h1>Register for a New Account</h1>
+    </header>
+    <main>
+        <!-- Container Box for Register Form -->
+        <div class="container-box">
+            <form id="registerForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="text" id="contact" name="contact" required pattern="[0-9]{10}">
+                
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const contact = document.getElementById("contact").value;
+
+            if (!username || !email || !password || !contact) {
+                alert("All fields are required.");
+                return;
+            }
+
+            if (!/^[0-9]{10}$/.test(contact)) {
+                alert("Please enter a valid 10-digit contact number.");
+                return;
+            }
+
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("contact", contact);
+            alert("Registration successful! Redirecting to login page.");
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
