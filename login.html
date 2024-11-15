@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Online Train Reservation System</title>
+<style>
+    /* Global styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f4f6;
+        color: #333;
+    }
+
+    /* Header styles */
+    header {
+        background-image: url('https://example.com/your-image.jpg'); /* Use your own image URL */
+        background-size: cover;
+        text-align: center;
+        padding: 60px 20px;
+        color: white;
+    }
+
+    header h1 {
+        font-size: 36px;
+        margin: 0;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Navigation styles */
+    nav {
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin: 0 20px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    nav a:hover {
+        background-color: #575757;
+    }
+
+    /* Form container styles */
+    .form-container {
+        width: 60%;
+        margin: 40px auto;
+        padding: 25px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .form-container h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-container label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .form-container input,
+    .form-container select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .form-container input[type="number"] {
+        width: auto;
+    }
+
+    .form-container button {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .form-container button:hover {
+        background-color: #45a049;
+    }
+
+    /* Booking history and contact section */
+    section#history, section#contact {
+        background-color: #fff;
+        padding: 25px;
+        margin: 40px auto;
+        width: 60%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    section#history h2, section#contact h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    section#history p, section#contact p {
+        font-size: 16px;
+        color: #666;
+        text-align: center;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .form-container {
+            width: 80%;
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 10px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 28px;
+        }
+
+        .form-container {
+            width: 90%;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Online Train Reservation System</h1>
+</header>
+
+<nav>
+    <a href="#book">Book Ticket</a>
+    <a href="#history">Booking History</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<section id="book" class="form-container">
+    <h2>Book Your Train Ticket</h2>
+    <form action="#" method="POST">
+        <label for="from-station">From Station:</label>
+        <select id="from-station" name="from_station">
+            <option value="New York">New York</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Houston">Houston</option>
+            <option value="Miami">Miami</option>
+        </select>
+
+        <label for="to-station">To Station:</label>
+        <select id="to-station" name="to_station">
+            <option value="San Francisco">San Francisco</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Austin">Austin</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Atlanta">Atlanta</option>
+        </select>
+
+        <label for="travel-date">Travel Date:</label>
+        <input type="date" id="travel-date" name="travel_date" />
+
+        <label for="class">Class:</label>
+        <select id="class" name="train_class">
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+            <option value="First">First Class</option>
+        </select>
+
+        <label for="passengers">Number of Passengers:</label>
+        <input type="number" id="passengers" name="passengers" min="1" max="10" />
+
+        <button type="submit">Book Ticket</button>
+    </form>
+</section>
+
+<section id="history" class="form-container">
+    <h2>Your Booking History</h2>
+    <p>To view your previous bookings, please log in with your credentials.</p>
+    <!-- Add login functionality here -->
+</section>
+
+<section id="contact" class="form-container">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or need support, feel free to reach out.</p>
+    <!-- Contact form -->
+</section>
+
+</body>
+</html>
